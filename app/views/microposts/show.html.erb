@@ -1,0 +1,44 @@
+<% provide(:pageinfo, 'Show Post') %>
+
+
+
+
+  <div class="row">
+<div class="col-md-offset-1 col-md-10 col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-lg-offset-1 col-lg-10">
+
+
+
+<p id="notice"><%= notice %></p>
+<br><br>
+<h3 style="color: #2E2649;"><b>All Notices</b></h3><br>
+<p style="font-size: 18px;"><b>Title</b></p>
+<p style=" font-weight: bold; font-size: 14px;  ">
+
+  <%= @micropost.title.capitalize %>
+</p>
+<br>
+<p style="font-size: 18px;"><b>Details</b></p>
+<p style="font-size: 14px;">
+
+  <%= @micropost.body %>
+</p>
+
+
+<% if @micropost.document.url != nil %>
+<h3 ><b><%= link_to 'Download Attachment', @micropost.document.url, target: "_blank", style: 'color: grey;  background-color: white; font-size: 16px;' %></b> &nbsp;<span class="glyphicon glyphicon-download-alt", style="color: grey; font-size: 16px;"></span></h3>
+<% end %>
+
+<br>
+<p style="color: grey; font-size: 18px;">Posted By <%= @micropost.faculty.firstname.capitalize %> <%= @micropost.faculty.lastname.capitalize %> </p>
+
+<br><br>
+ <% if current_faculty == @micropost.faculty %>
+<p style="text-align: center;">
+    <%= link_to 'Edit Post', edit_micropost_path(@micropost) , class: 'btn btn-md', style: ' background-color: #2E2649; color: white; border-radius: 22.4px;' %>&nbsp;
+    <%= link_to 'Back', microposts_path , class: "btn btn-md" , style:  'border: 1px solid grey; color: #2E2649; border-radius: 22.4px; ' %>
+    </p>
+ <% end %>
+
+
+</div>
+</div>

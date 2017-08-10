@@ -1,0 +1,115 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body{
+	margin-top: 0 !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	margin-bottom: 0 !important;
+	overflow-x: hidden !important;
+	height: 100%;
+	width: 100%;
+	
+}
+
+.container-fluid {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.container{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+#logo{
+		margin-left: 50px;
+		height: 100px;
+		width: 100px;
+	}
+
+
+
+.navbar-default{
+	background-color: #2E2649;
+	margin-left: 0 !important;
+
+}
+.uti{
+	background-color: white;
+	
+
+}
+
+ul.nav a:hover { color: #fff !important;
+				  background-color: #191232 !important; }
+
+ul.nav 	a{
+	color: #A493D1 !important;
+}
+
+.sidebar{
+
+	height: 100%;
+	position: fixed;
+	background-color: #2E2649;
+	
+	background-image: url("/assets/col.jpg");
+
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-blend-mode: multiply;
+
+	background-size: 100% 75%;
+}
+
+
+.connect{
+	margin-top: 30px;
+	margin-bottom: 34px;
+	margin-left: 37%
+}
+
+
+
+.footer{
+	margin-top: 70px !important;
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+	clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    margin-top: -3em;
+}
+.footer-back{
+	background-color: #403469;
+
+}
+.footer-list{
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+	list-style: none;
+	font-size: 12px;
+	li{	
+		padding: 5px 10px;
+	}
+	a{	
+		text-decoration: none !important;
+		color: #A493D1 !important;
+		&:hover{
+
+			color: white !important;
+			background-color: transparent !important;
+		}
+	}
+	.col-md-3{
+		margin-left: -20px;
+	}
+
+}
+
+
+
+
+

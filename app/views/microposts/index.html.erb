@@ -1,0 +1,53 @@
+<% provide(:pageinfo,'All Notices') %>
+
+<div class= "row">
+<div class=" col-md-12  col-xs-12  col-sm-12  col-lg-12">
+<p id="notice"><%= notice %></p>
+
+<h3 style="color: #2E2649; margin-left: 20px;">All Notices</h3>
+
+<table style="margin-left: 5px;">
+  <thead style="height: 50px; ">
+    <tr>  
+      <th style="width: 10%; font-size: 16px; font-weight: bold; color: grey; ">Starred</th>
+
+      <th style="width: 15%; font-size: 16px; font-weight: bold; color: grey;">Posted By</th>
+   
+
+      <th style="width: 60%; font-size: 16px; font-weight: bold; color: grey;">Post</th>
+
+    
+      <th style="width: 20%; font-size: 16px; font-weight: bold;  color: grey;">Date</th>
+    
+    </tr>
+  </thead>
+
+  <tbody>
+     <% i = 0 %>
+    <% @microposts.each do |micropost| %>
+     
+      <% if i%2 == 0 %>
+          <tr data-link="<%= micropost_path(micropost) %>" style="background-color: lightgrey; height: 80px; cursor: pointer;">
+          <% i +=1 %>
+      <% else %>
+            <tr data-link="<%= micropost_path(micropost)%>" style="height: 80px;cursor: pointer;">
+      <% i += 1 %>
+      <% end %>
+
+        <td></td>
+        <td style="font-size: 14px;"><%= micropost.faculty.firstname %>&nbsp;<%= micropost.faculty.lastname %></td>
+        <td style="font-size: 14px;"><%= micropost.title %></td>
+        <td style="font-size: 14px;"><%= micropost.created_at %> </td>
+
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+</div>
+</div>

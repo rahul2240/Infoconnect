@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Infoconnect</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2E2649" />
+  </head>
+  <body>
+  <div class= "container-fluid" >
+      <div class= "row">
+        <% if params[:action] == "show" %>
+        <% else %>
+          <div class= "col-md-2 col-lg-2" >
+            <%= render 'layouts/header' %>
+          </div>
+          <% end %>
+          <div class= "col-md-10 col-lg-10" style="padding-left: 0px !important;">
+          <% if params[:action] == "index" %>
+          <% elsif params[:action] == "show" %>
+          <% else %>
+          <div class="visible-md visible-lg"><div class="connect"><img src="/assets/in.png" height="90px" width="280px;"></div></div>
+         
+
+          <% end %>
+          <%= yield %>
+          <% if params[:action] == "show" %>
+          <% else %>
+          <%= render 'layouts/footer' %>
+          <% end %>
+          </div>
+
+      </div>
+  </div>
+ <script>
+    var count = 1;
+    function setColor(btn, color) {
+        var property = document.getElementById(btn);
+        if (count == 0) {
+            property.style.backgroundColor = "#fff";
+            count = 1;        
+        }
+        else {
+            property.style.backgroundColor = "#2E2649";
+            count = 0;
+        }
+    }
+
+jQuery(function($) {
+
+    $("tr[data-link]").click(function() {
+        window.location = $(this).data('link');
+    });
+
+});
+
+
+</script>
+  </body>
+</html>

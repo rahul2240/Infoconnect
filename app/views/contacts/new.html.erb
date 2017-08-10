@@ -1,0 +1,39 @@
+<% provide(:pageinfo, "Contact Us") %>
+<div class="row">
+
+<h3 style="text-align: center; color: gray;">Contact Us</h3>
+<div  class="col-md-offset-3 col-md-6 col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10">
+<p style="text-align: center;">You can communicate to us your opinion about the present structure of Info-centre or come up with a new suggestion or report a bug. You can even post your queries using the form below.
+</p>
+
+<p style="text-align: center;">
+In case of Login Issues, provide us with your admission number in contact message.
+</p>
+</div>
+<br>
+
+</div>
+
+<div class="row">
+
+<div class="col-md-offset-3 col-md-6 col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10">
+ <%= form_for @contact do |f| %>
+
+<%= f.text_field :name, placeholder: "Name", class: 'form-control' %>
+<br>
+<%= f.email_field :email, placeholder: 'Email', class: 'form-control' %>
+<br>
+<%= f.text_area :message, placeholder: 'Message', class: 'form-control' %>
+<br>
+<%= f.submit 'Reset', class: 'btn btn-md', style: 'border: 1px solid grey; color: black; border-radius: 22.4px;;' %>
+
+<%= f.submit 'Submit', class: 'btn btn-md', style: 'float: right; background-color: #2E2649; color: white; border-radius: 22.4px;;' %>
+
+<% end %>
+<br>
+<br>
+<br>
+</div>
+</div>
+
+

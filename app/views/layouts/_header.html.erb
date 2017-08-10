@@ -1,0 +1,141 @@
+<div class="visible-xs visible-sm">
+<nav class="navbar navbar-default">
+  
+  
+    <!-- Brand and toggle get grouped for better mobile display -->
+     <img src="/assets/in.png" height="100px;" width="100%"  >
+    <div class="navbar-header uti" id="yo">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" onclick="setColor('yo', 'white')">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     
+      <a class="navbar-brand" href="#">
+         <%= yield(:pageinfo) %>
+      </a>
+    </div>
+    
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <ul class="nav navbar-nav list">
+      
+       <li ><%= link_to "Home<span class='glyphicon glyphicon glyphicon-home pull-right'></span>".html_safe, root_path %></li>
+        <li ><%= link_to "All notices<span class='glyphicon glyphicon-pushpin pull-right'></span>".html_safe, microposts_path %></li>
+
+
+            <% if logged_in? && faculty_in? %>
+
+            <li ><%= link_to "New Post<span class='glyphicon glyphicon glyphicon-pencil pull-right'></span>".html_safe, new_micropost_path %></li>
+
+            <% end %>
+
+        <li ><%= link_to "About<span class=' glyphicon-list-alt pull-right'></span>".html_safe, about_path %></li>
+        <li ><%= link_to "Contact<span class=' glyphicon glyphicon-earphone pull-right'></span>".html_safe, contact_path %></li>
+        <li ><%= link_to "JSS Website<span class=' glyphicon glyphicon-globe pull-right'></span>".html_safe, "http://jssaten.ac.in/" %></li>
+        
+
+    <% if logged_in? && !faculty_in?  %>
+       <li ><%= link_to "My Profile<span class='glyphicon glyphicon-user pull-right'></span>".html_safe, profile_path(current_user) %></li>
+        <li ><%= link_to "Change Password<span class='glyphicon glyphicon-log-in pull-right'></span>".html_safe, edit_user_path(current_user) %></li>
+        <li ><%= link_to "Logout<span class='glyphicon glyphicon-log-in pull-right'></span>".html_safe, logout_path, method: :delete %></li>
+      
+
+    <% elsif logged_in? && faculty_in? %>
+        
+       <li ><%= link_to "My Profile<span class='glyphicon glyphicon-user pull-right'></span>".html_safe, facultyprofile_path(current_faculty) %></li>
+        <li ><%= link_to "Change Password<span class='glyphicon glyphicon-log-in pull-right'></span>".html_safe, edit_faculty_path(current_faculty) %></li>
+        <li ><%= link_to "Logout<span class='glyphicon glyphicon-log-in pull-right'></span>".html_safe, logout_path, method: :delete %></li>
+    <% else %>
+        <li ><%= link_to "Login<span class='glyphicon glyphicon-log-in pull-right'></span>".html_safe, login_path %></li>
+    <% end %>
+
+
+
+        <li><%= link_to "MOOCs", "#" %></li>
+        <li ><%= link_to "NPTEL<span class='glyphicon glyphicon-new-window pull-right'></span>".html_safe, "http://nptel.ac.in/" %></li>
+         <li ><%= link_to "SAKSHAT<span class='glyphicon glyphicon-new-window pull-right'></span>".html_safe, "http://www.sakshat.ac.in/" %></li>
+      </ul>
+     
+      
+        
+    </div><!-- /.navbar-collapse -->
+  
+  
+
+</nav>
+ </div>
+
+
+
+
+<div class="visible-md visible-lg">
+<nav class="navbar sidebar">
+  
+    <!-- Brand and toggle get grouped for better mobile display -->
+     
+    <div class="navbar-header">
+      
+      <a class="navbar-brand" href="#">
+        <img src="/assets/a.png">
+      </a>
+    </div>
+    
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    
+
+      <ul class="nav" style = "margin-top: 180px; display: block;">
+       
+        <li ><%= link_to "Home<span class='glyphicon glyphicon glyphicon-home pull-right'></span>".html_safe, root_path %></li>
+        <li ><%= link_to "All notices<span class='glyphicon glyphicon-pushpin pull-right'></span>".html_safe, microposts_path %></li>
+        
+         <% if logged_in? && faculty_in? %>
+
+            <li ><%= link_to "New Post<span class='glyphicon glyphicon glyphicon-pencil pull-right'></span>".html_safe, new_micropost_path %></li>
+
+            <% end %>
+
+        <li ><%= link_to "About<span class='glyphicon glyphicon-list-alt pull-right'></span>".html_safe, about_path %></li>
+        <li ><%= link_to "Contact<span class=' glyphicon glyphicon-earphone pull-right'></span>".html_safe, contact_path %></li>
+        <li ><%= link_to "JSS Website<span class=' glyphicon glyphicon-globe pull-right'></span>".html_safe, "http://jssaten.ac.in/" %></li>
+       
+
+     <% if logged_in? && !faculty_in? %>
+       <li ><%= link_to "My Profile<span class='glyphicon glyphicon-user pull-right'></span>".html_safe, profile_path(current_user) %></li>
+        <li ><%= link_to "Change Password<span class='glyphicon glyphicon-log-in pull-right'></span>".html_safe, edit_user_path(current_user) %></li>
+        <li ><%= link_to "Logout<span class='glyphicon glyphicon-log-in pull-right'></span>".html_safe, logout_path, method: :delete %></li>
+      
+
+    <% elsif logged_in? && faculty_in? %>
+      
+       <li ><%= link_to "My Profile<span class='glyphicon glyphicon-user pull-right'></span>".html_safe, facultyprofile_path(current_faculty) %></li>
+        <li ><%= link_to "Change Password<span class='glyphicon glyphicon-log-in pull-right'></span>".html_safe, edit_faculty_path(current_faculty) %></li>
+        <li ><%= link_to "Logout<span class='glyphicon glyphicon-log-in pull-right'></span>".html_safe, logout_path, method: :delete %></li>
+    <% else %>
+        <li ><%= link_to "Login<span class='glyphicon glyphicon-log-in pull-right'></span>".html_safe, login_path %></li>
+    <% end %>
+
+
+        
+        <legend></legend>
+        <li><%= link_to "MOOCs", "#" %></li>
+        <li ><%= link_to "NPTEL<span class='glyphicon glyphicon-new-window pull-right'></span>".html_safe, "http://nptel.ac.in/" %></li>
+         <li ><%= link_to "SAKSHAT<span class='glyphicon glyphicon-new-window pull-right'></span>".html_safe, "http://www.sakshat.ac.in/" %></li>
+       
+      </ul>
+     
+      
+        
+    
+ 
+
+</nav>
+ </div>
+
+
+
+
+
+

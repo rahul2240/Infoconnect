@@ -1,0 +1,152 @@
+<% provide(:pageinfo, "My Profile") %>
+<h3 style="text-align: center; color: grey; text-decoration: underline;">My Profile</h3>
+<div class="row">
+  <div class="col-xs-12">
+<%= form_for(@use, url: profile_path(@use))  do |form| %>
+  
+<br><br>
+
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+
+      <div class="col-md-4 col-xs-12">
+        <div class="field">
+          <%= form.label :username %>
+          <%= form.text_field :username, value: @use.username, disabled: true,class: 'form-control' %>
+        </div>
+        </div>
+
+
+
+        <div class="col-md-4">
+          <div class="field">
+            <%= form.label :firstname %>
+            <%= form.text_field :firstname, id: :user_firstname,class: 'form-control' %>
+          </div>
+        </div>
+
+
+        <div class="col-md-4">
+          <div class="field">
+            <%= form.label :lastname %>
+            <%= form.text_field :lastname, id: :user_lastname,class: 'form-control' %>
+          </div>
+          </div>
+
+</div>
+
+<br>
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+
+          <div class="col-md-4">
+            <div class="field">
+              <%= form.label :course %>
+              <%= form.text_field :course, id: :user_course,class: 'form-control' %>
+            </div>
+          </div>
+
+            <div class="col-md-4">
+            <div class="field">
+              <%= form.label :branch %>
+              <%= form.text_field :branch, id: :user_branch,class: 'form-control' %>
+            </div>
+
+          </div>
+
+            <div class="col-md-4">
+              <div class="field">
+                <%= form.label :year %>
+                <%= form.text_field :year, id: :user_year ,class: 'form-control'%>
+              </div>
+              </div>
+</div>
+<br>
+
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+
+
+
+          <div class="col-md-4" >
+            <div class="field">
+              <%= form.label :section %>
+              <%= form.text_field :section, id: :user_section,class: 'form-control' %>
+            </div>
+          </div>
+
+            <div class="col-md-4">
+              <div class="field">
+                <%= form.label :email %>
+                <%= form.text_field :email, id: :user_email,class: 'form-control' %>
+              </div>
+
+              </div>
+
+
+            <div class="col-md-4">
+            <div class="field">
+              <%= form.label :university_roll_no %>
+              <%= form.text_field :university_roll_no, id: :user_university_roll_no,class: 'form-control' %>
+            </div></div>
+
+</div>
+<br>
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+
+                    <div class="col-md-4">
+
+                      <div class="field">
+                      <%= form.label :contact_no %>
+                      <%= form.text_field :contact_no, id: :user_contact_no,class: 'form-control' %>
+                    </div></div>
+
+
+
+
+                    <div class="col-md-4">
+
+                      <div class="field">
+                      <%= form.label :address %>
+                      <%= form.text_field :address, id: :user_address,class: 'form-control' %>
+                    </div>
+
+
+                    </div>
+
+                      <div class="col-md-4">
+                          <div class="field">
+                          <%= form.label :father_name %>
+                          <%= form.text_field :father_name, id: :user_father_name ,class: 'form-control'%>
+                        </div></div>,
+
+
+</div>
+
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+
+  <div class="col-md-4">
+    <div class="field">
+    <%= form.label :mother_name %>
+    <%= form.text_field :mother_name, id: :user_mother_name, class: 'form-control' %>
+    </div>
+    </div>
+
+  
+
+  </div>
+
+<br>
+  
+
+ <div class="row" style="margin-left: 26px; margin-right: 10px;">
+ <div class="col-md-4">
+  
+  
+<%= form.submit 'Submit', class: 'btn btn-md', style: ' background-color: #2E2649; color: white; border-radius: 22.4px;' %>
+   
+  </div>
+  </div>
+<% end %>
+<br>
+<br>
+
+</div>
+</div>

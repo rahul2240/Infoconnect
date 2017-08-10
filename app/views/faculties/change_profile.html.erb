@@ -1,0 +1,120 @@
+<% provide(:pageinfo, "My Profile") %>
+<h3 style="text-align: center; color: grey; text-decoration: underline;">My Profile</h3>
+<div class="row">
+  <div class="col-xs-12">
+<%= form_for(@faculty, url: facultyprofile_path(@faculty))  do |form| %>
+  
+<br><br>
+
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+
+      <div class="col-md-4 col-xs-12">
+        <div class="field">
+          <%= form.label :username %>
+          <%= form.text_field :username, value: @faculty.username, disabled: true,class: 'form-control' %>
+        </div>
+        </div>
+
+
+
+        <div class="col-md-4">
+          <div class="field">
+            <%= form.label :firstname %>
+            <%= form.text_field :firstname, id: :faculty_firstname,class: 'form-control' %>
+          </div>
+        </div>
+
+
+        <div class="col-md-4">
+          <div class="field">
+            <%= form.label :lastname %>
+            <%= form.text_field :lastname, id: :faculty_lastname,class: 'form-control' %>
+          </div>
+          </div>
+
+</div>
+
+<br>
+
+
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+
+
+
+
+            <div class="col-md-4">
+              <div class="field">
+                <%= form.label :email %>
+                <%= form.text_field :email, id: :faculty_email,class: 'form-control' %>
+              </div>
+
+              </div>
+
+
+            <div class="col-md-4">
+            <div class="field">
+              <%= form.label :university_roll_no %>
+              <%= form.text_field :university_roll_no, id: :faculty_university_roll_no,class: 'form-control' %>
+            </div></div>
+
+              <div class="col-md-4">
+
+                      <div class="field">
+                      <%= form.label :contact_no %>
+                      <%= form.text_field :contact_no, id: :faculty_contact_no,class: 'form-control' %>
+                    </div></div>
+
+
+</div>
+<br>
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+
+                  
+
+
+
+                    <div class="col-md-4">
+
+                      <div class="field">
+                      <%= form.label :address %>
+                      <%= form.text_field :address, id: :faculty_address,class: 'form-control' %>
+                    </div>
+
+
+                    </div>
+
+                      <div class="col-md-4">
+                          <div class="field">
+                          <%= form.label :father_name %>
+                          <%= form.text_field :father_name, id: :faculty_father_name ,class: 'form-control'%>
+                        </div></div>
+
+                         <div class="col-md-4">
+                      <div class="field">
+                      <%= form.label :mother_name %>
+                      <%= form.text_field :mother_name, id: :faculty_mother_name, class: 'form-control' %>
+                      </div>
+                      </div>
+
+
+</div>
+
+
+
+<br>
+  
+
+ <div class="row" style="margin-left: 26px; margin-right: 10px;">
+ <div class="col-md-4">
+  
+  
+<%= form.submit 'Submit', class: 'btn btn-md', style: ' background-color: #2E2649; color: white; border-radius: 22.4px;' %>
+   
+  </div>
+  </div>
+<% end %>
+<br>
+<br>
+
+</div>
+</div>

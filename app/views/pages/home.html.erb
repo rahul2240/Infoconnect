@@ -1,0 +1,42 @@
+<% provide(:pageinfo, "Welcome User!") %>
+<% if current_user.nil? == false %>
+<p style="color: grey; font-size: 16px; text-align: center; margin-top: -10px; margin-bottom: 25px;"><b>Welcome <%= @user.firstname.capitalize %></b></p>
+<% end %>
+<div class= "row">
+<div class=" col-md-offset-1 col-md-8  col-xs-offset-1 col-xs-11 col-sm-offset-1 col-sm-11  col-lg-12">
+<p id="notice"><%= notice %></p>
+
+<p style="color: #2D2255; margin-left: 10px; font-weight: bold; font-size: 16px;"><span class="glyphicon glyphicon-pushpin"></span>&nbsp;&nbsp;New Notices</p>
+
+<table style="margin-left: 5px; width: 90%;">
+
+
+  <tbody>
+     
+    <% @microposts.each do |micropost| %>
+     
+
+          
+        <tr data-link="<%= micropost_path(micropost)%>" style="height: 80px; cursor: pointer;">
+      
+
+         <td style="font-size: 16px; width: 50%;"><%= micropost.title.capitalize %></td>
+
+         
+        <td style="font-size: 16px; width: 25%; color: grey; "><b><span class="glyphicon glyphicon-user" style="color: grey; "></span>&nbsp;&nbsp;<%= micropost.faculty.firstname.capitalize %>&nbsp;<%= micropost.faculty.lastname.capitalize %></b></td>
+       
+        <td style="font-size: 16px; color: grey; width: 25%;"><b><span class="glyphicon glyphicon-calendar" style="color: grey; "></span>&nbsp;<%= micropost.created_at.strftime("%Y-%m-%d") %></b> </td>
+
+      </tr>
+
+     
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+</div>
+</div>
