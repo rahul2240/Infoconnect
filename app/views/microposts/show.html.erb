@@ -24,7 +24,7 @@
 </p>
 
 
-<% if @micropost.document.url.present? == false %>
+<% if @micropost.document.present? %>
 <h3 ><b><%= link_to 'Download Attachment', @micropost.document.url, target: "_blank", style: 'color: grey;  background-color: white; font-size: 16px;' %></b> &nbsp;<span class="glyphicon glyphicon-download-alt", style="color: grey; font-size: 16px;"></span></h3>
 <% end %>
 
